@@ -1662,17 +1662,17 @@
         "affectsGlobalScope": false
       },
       "../src/character/character.service.ts": {
-        "version": "e4ae9ad42add0aaed09529d5903adb3c8942e8c234e43ebdc146f5753061752d",
+        "version": "9bdc49707749b42bf781f759fa03c2fcf361f204f11c6e47e3b20ff1feee5dd5",
         "signature": "c6d4c6a91c016e6ae6344641b11d87c61e62c7c77959ff12530b8211ae1191de",
         "affectsGlobalScope": false
       },
       "../src/character/character.controller.ts": {
-        "version": "5be44650c5ad7c2727a65c7771298d2256bfee062cdb294359a59ba9c9764441",
+        "version": "45d9e2c26d4d6eae195d6e5c9b7aa6a2c99fa14fcbfb5ed3c3f1d321b53903d8",
         "signature": "2c65f6ad9e1c2f6dfa4430d6f94aaeff995d4700b3f70c36e9753b15ed4c44cd",
         "affectsGlobalScope": false
       },
       "../src/character/character.module.ts": {
-        "version": "ac4a7260178f6f1e6457cb3334505a4da1539114298c1ffcdb2384913dd33ba9",
+        "version": "3a69c91e4b663edf8bd3c1c8bf808b416edafa8848638ff42651f0da111c3878",
         "signature": "ce6c4213c2e5ba3012fbf2014faf170b734a0a6497c6425ff17538d5edbd0b49",
         "affectsGlobalScope": false
       },
@@ -1707,7 +1707,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "0cd2c51a1e664e72e3fbe852de46c50bc0afcf269628ff63ed940e468b2da4fc",
+        "version": "a053a897416b3ef625369062df58ae45000967ff5392b06c98f1d1aaf4a05c73",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -1897,7 +1897,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "e5a6517f393842af04ed033e176750b45b3f7ffb00e60f22d1d2f2e6959639a4",
+        "version": "282bf08610801cc9c1c432fe6061dccfa99d1eac9d4e764767ac3765cd8633bb",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -2199,6 +2199,11 @@
       "../node_modules/@types/body-parser/index.d.ts": {
         "version": "ebddbd167c2fabd0151f50e5df94ca6d845149c47521280d8867afe3429dd078",
         "signature": "ebddbd167c2fabd0151f50e5df94ca6d845149c47521280d8867afe3429dd078",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/cache-manager/index.d.ts": {
+        "version": "f8474390eb75c585a8858512f67c363a7d85f3f84c9d021de3752c07aa26bc36",
+        "signature": "f8474390eb75c585a8858512f67c363a7d85f3f84c9d021de3752c07aa26bc36",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/color-name/index.d.ts": {
@@ -3991,6 +3996,13 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/ts3.7/index.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/cache-manager/index.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@types/color-name/index.d.ts": [
@@ -8371,6 +8383,13 @@
         "../node_modules/@types/node/ts3.7/index.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
+      "../node_modules/@types/cache-manager/index.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
       "../node_modules/@types/color-name/index.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -11238,6 +11257,7 @@
       "../node_modules/@types/babel__template/index.d.ts",
       "../node_modules/@types/babel__traverse/index.d.ts",
       "../node_modules/@types/body-parser/index.d.ts",
+      "../node_modules/@types/cache-manager/index.d.ts",
       "../node_modules/@types/color-name/index.d.ts",
       "../node_modules/@types/connect/index.d.ts",
       "../node_modules/@types/cookiejar/index.d.ts",
