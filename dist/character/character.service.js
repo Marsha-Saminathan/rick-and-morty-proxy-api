@@ -8,13 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CharacterService = void 0;
 const common_1 = require("@nestjs/common");
 const operators_1 = require("rxjs/operators");
 let CharacterService = class CharacterService {
-    constructor(httpService) {
+    constructor(httpService, cacheManager) {
         this.httpService = httpService;
+        this.cacheManager = cacheManager;
     }
     getCharacters(name, status, species, type, gender) {
         return this.httpService.get('https://rickandmortyapi.com/api/character', {
@@ -39,7 +43,8 @@ let CharacterService = class CharacterService {
 };
 CharacterService = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [common_1.HttpService])
+    __param(1, common_1.Inject(common_1.CACHE_MANAGER)),
+    __metadata("design:paramtypes", [common_1.HttpService, Object])
 ], CharacterService);
 exports.CharacterService = CharacterService;
 //# sourceMappingURL=character.service.js.map

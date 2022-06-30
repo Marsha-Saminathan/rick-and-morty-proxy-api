@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EpisodeModule = void 0;
 const common_1 = require("@nestjs/common");
+const redisStore = require("cache-manager-redis-store");
 const episode_controller_1 = require("./episode.controller");
 const episode_service_1 = require("./episode.service");
 const common_2 = require("@nestjs/common");
@@ -15,7 +16,12 @@ let EpisodeModule = class EpisodeModule {
 };
 EpisodeModule = __decorate([
     common_1.Module({
-        imports: [common_2.HttpModule],
+        imports: [common_2.HttpModule, common_1.CacheModule.register({
+                store: redisStore,
+                host: 'localhost',
+                port: 6379,
+                ttl: 300
+            })],
         controllers: [episode_controller_1.EpisodeController],
         providers: [episode_service_1.EpisodeService],
     })

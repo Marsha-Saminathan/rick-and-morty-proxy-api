@@ -1,12 +1,6 @@
 import { Injectable, NotFoundException, HttpService, HttpException } from '@nestjs/common';
-import { of, Observable } from 'rxjs';
+import {  Observable } from 'rxjs';
 import {
-  delay,
-  filter,
-  toArray,
-  throwIfEmpty,
-  switchMap,
-  take,
   map,
   catchError,
 } from 'rxjs/operators';
