@@ -13,8 +13,7 @@ export class CharacterService {
 /*    async getCharacters(name: string, status: string, species: string, type: string, gender: string) {
 
     var cachedvalue = await this.cacheManager.get('Characters');
-    console.log(value)
-     if(cachedvalue)
+     if(cachedvalue != 'null')
     {
       return of(cachedvalue);
     } 
@@ -36,7 +35,7 @@ export class CharacterService {
       }),
     );
 
-    await this.cacheManager.set('Characters');
+    await this.cacheManager.set('Characters', of(characters));
 
     return characters;
   } */
