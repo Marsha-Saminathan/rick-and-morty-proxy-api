@@ -1,8 +1,9 @@
 import { HttpService } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import { Cache } from 'cache-manager';
 export declare class LocationService {
     private readonly httpService;
-    constructor(httpService: HttpService);
-    getLocations(name: string, type: string, dimension: string): Observable<any>;
-    getLocationById(id: number): Observable<any>;
+    private cacheManager;
+    constructor(httpService: HttpService, cacheManager: Cache);
+    getLocations(name: string, type: string, dimension: string): Promise<any>;
+    getLocationById(id: number): Promise<any>;
 }

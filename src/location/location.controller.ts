@@ -7,16 +7,16 @@ export class LocationController {
   constructor(private readonly locationService: LocationService) {}
 
   @Get()
-  getLocations(
+  async getLocations(
     @Query('name') name = '',
     @Query('type') type = '',
     @Query('dimension') dimension = ''
-  ): Observable<any[]> {
+  ) {
     return this.locationService.getLocations(name, type, dimension);
   }
 
   @Get('/:id')
-  getLocationById(@Param('id') id: number): Observable<any[]> {
+  async getLocationById(@Param('id') id: number) {
     return this.locationService.getLocationById(id);
   }
 }

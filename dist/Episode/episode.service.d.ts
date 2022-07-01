@@ -1,8 +1,9 @@
 import { HttpService } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import { Cache } from 'cache-manager';
 export declare class EpisodeService {
     private readonly httpService;
-    constructor(httpService: HttpService);
-    getEpisodes(name: string, episode: string): Observable<any>;
-    getEpisodeById(id: number): Observable<any>;
+    private cacheManager;
+    constructor(httpService: HttpService, cacheManager: Cache);
+    getEpisodes(name: string, episode: string): Promise<any>;
+    getEpisodeById(id: number): Promise<any>;
 }

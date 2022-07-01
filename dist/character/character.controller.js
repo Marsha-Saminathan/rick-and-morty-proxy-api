@@ -15,15 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CharacterController = void 0;
 const common_1 = require("@nestjs/common");
 const character_service_1 = require("./character.service");
-const rxjs_1 = require("rxjs");
 let CharacterController = class CharacterController {
     constructor(characterService) {
         this.characterService = characterService;
     }
-    getCharacters(name = '', status = '', species = '', type = '', gender = '') {
+    async getCharacters(name = '', status = '', species = '', type = '', gender = '') {
         return this.characterService.getCharacters(name, status, species, type, gender);
     }
-    getCharacterById(id) {
+    async getCharacterById(id) {
         return this.characterService.getCharacterById(id);
     }
 };
@@ -36,14 +35,14 @@ __decorate([
     __param(4, common_1.Query('gender')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object, Object, Object, Object]),
-    __metadata("design:returntype", rxjs_1.Observable)
+    __metadata("design:returntype", Promise)
 ], CharacterController.prototype, "getCharacters", null);
 __decorate([
     common_1.Get('/:id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", rxjs_1.Observable)
+    __metadata("design:returntype", Promise)
 ], CharacterController.prototype, "getCharacterById", null);
 CharacterController = __decorate([
     common_1.Controller('character'),

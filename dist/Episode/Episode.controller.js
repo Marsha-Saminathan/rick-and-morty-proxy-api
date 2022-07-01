@@ -15,15 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EpisodeController = void 0;
 const common_1 = require("@nestjs/common");
 const episode_service_1 = require("./episode.service");
-const rxjs_1 = require("rxjs");
 let EpisodeController = class EpisodeController {
     constructor(episodeService) {
         this.episodeService = episodeService;
     }
-    getEpisodes(name = '', episode = '') {
+    async getEpisodes(name = '', episode = '') {
         return this.episodeService.getEpisodes(name, episode);
     }
-    getEpisodeById(id) {
+    async getEpisodeById(id) {
         return this.episodeService.getEpisodeById(id);
     }
 };
@@ -33,14 +32,14 @@ __decorate([
     __param(1, common_1.Query('episode')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
-    __metadata("design:returntype", rxjs_1.Observable)
+    __metadata("design:returntype", Promise)
 ], EpisodeController.prototype, "getEpisodes", null);
 __decorate([
     common_1.Get('/:id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", rxjs_1.Observable)
+    __metadata("design:returntype", Promise)
 ], EpisodeController.prototype, "getEpisodeById", null);
 EpisodeController = __decorate([
     common_1.Controller('episode'),

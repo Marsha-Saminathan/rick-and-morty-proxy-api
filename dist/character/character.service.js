@@ -20,8 +20,12 @@ let CharacterService = class CharacterService {
         this.httpService = httpService;
         this.cacheManager = cacheManager;
     }
-    getCharacters(name, status, species, type, gender) {
-        return this.httpService.get('https://rickandmortyapi.com/api/character', {
+    async getCharacters(name, status, species, type, gender) {
+        var cachedvalue = await this.cacheManager.get('Characters');
+        if (cachedvalue) {
+            return cachedvalue;
+        }
+        var characters = await this.httpService.get('https://rickandmortyapi.com/api/character', {
             params: {
                 name: name,
                 status: status,
@@ -32,13 +36,21 @@ let CharacterService = class CharacterService {
         })
             .pipe(operators_1.map(response => response.data), operators_1.catchError((e) => {
             throw new common_1.HttpException(e.response.data, e.response.status);
-        }));
+        })).toPromise();
+        await this.cacheManager.set('Characters', characters);
+        return characters;
     }
-    getCharacterById(id) {
-        return this.httpService.get('https://rickandmortyapi.com/api/character/' + id)
+    async getCharacterById(id) {
+        var cachedvalue = await this.cacheManager.get('CharacterById');
+        if (cachedvalue) {
+            return cachedvalue;
+        }
+        var CharacterById = await this.httpService.get('https://rickandmortyapi.com/api/character/' + id)
             .pipe(operators_1.map(response => response.data), operators_1.catchError((e) => {
             throw new common_1.HttpException(e.response.data, e.response.status);
-        }));
+        })).toPromise();
+        await this.cacheManager.set('CharacterById', CharacterById);
+        return CharacterById;
     }
 };
 CharacterService = __decorate([

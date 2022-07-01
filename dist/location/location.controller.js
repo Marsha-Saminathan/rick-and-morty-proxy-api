@@ -15,15 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LocationController = void 0;
 const common_1 = require("@nestjs/common");
 const location_service_1 = require("./location.service");
-const rxjs_1 = require("rxjs");
 let LocationController = class LocationController {
     constructor(locationService) {
         this.locationService = locationService;
     }
-    getLocations(name = '', type = '', dimension = '') {
+    async getLocations(name = '', type = '', dimension = '') {
         return this.locationService.getLocations(name, type, dimension);
     }
-    getLocationById(id) {
+    async getLocationById(id) {
         return this.locationService.getLocationById(id);
     }
 };
@@ -34,14 +33,14 @@ __decorate([
     __param(2, common_1.Query('dimension')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object, Object]),
-    __metadata("design:returntype", rxjs_1.Observable)
+    __metadata("design:returntype", Promise)
 ], LocationController.prototype, "getLocations", null);
 __decorate([
     common_1.Get('/:id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", rxjs_1.Observable)
+    __metadata("design:returntype", Promise)
 ], LocationController.prototype, "getLocationById", null);
 LocationController = __decorate([
     common_1.Controller('location'),

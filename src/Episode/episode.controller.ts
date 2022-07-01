@@ -7,15 +7,15 @@ export class EpisodeController {
   constructor(private readonly episodeService: EpisodeService) {}
 
   @Get()
-  getEpisodes(
+  async getEpisodes(
     @Query('name') name = '',
     @Query('episode') episode = ''
-  ): Observable<any[]> {
+  ) {
     return this.episodeService.getEpisodes(name, episode);
   }
 
   @Get('/:id')
-  getEpisodeById(@Param('id') id: number): Observable<any[]> {
+  async getEpisodeById(@Param('id') id: number) {
     return this.episodeService.getEpisodeById(id);
   }
 }
